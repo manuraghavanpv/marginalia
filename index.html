@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marginalia</title>
+    <meta name="description" content="Track your reading progress and notes">
+    <meta name="theme-color" content="#5E3B2D"> <!-- Deep parchment brown -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icon.png" sizes="48x48">
+    <link rel="icon" href="icon.png" sizes="96x96" type="image/png">
+    <link rel="apple-touch-icon" href="icon.png">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <h2>Notes</h2>
+        <div id="notes-list"></div>
+    </div>
+
+    <div class="container">
+        <h1>Book Progress Tracker</h1>
+
+        <!-- Dark Mode Toggle -->
+        <button id="dark-mode-toggle">🌙 Dark Mode</button>
+
+        <!-- Book Details Form -->
+        <form id="book-form">
+            <div class="form-field">
+                <label for="book-title">Book Title:</label>
+                <input type="text" id="book-title" required>
+            </div>
+            <div class="form-field">
+                <label for="total-pages">Total Pages:</label>
+                <input type="number" id="total-pages" required>
+            </div>
+            <div class="form-field">
+                <label for="current-page">Current Page:</label>
+                <input type="number" id="current-page" required>
+            </div>
+            <div class="form-field">
+                <label for="cover-image">Upload Cover Image:</label>
+                <input type="file" id="cover-image" accept="image/png, image/jpeg, image/jpg" required>
+            </div>
+            <button type="submit">Save Book</button>
+        </form>
+
+        <!-- Progress Tracker -->
+        <div id="progress-tracker">
+            <div id="pixel-art-tracker">
+                <img id="cover-image-preview" src="" alt="Cover Image" />
+            </div>
+        </div>
+
+        <!-- Notes Section -->
+        <div id="notes-section">
+            <textarea id="notes" placeholder="Write your notes here..."></textarea>
+            <button id="save-notes">Save Notes</button>
+        </div>
+
+        <!-- Data Management Buttons -->
+        <button id="export-data">📁 Export Data</button>
+        <button id="import-data">📥 Import Data</button>
+        <button id="clear-data-btn">🗑️ Clear Items</button>
+        
+        <!-- Clear Options Modal -->
+        <div id="clear-options-modal" class="modal hidden">
+            <div class="modal-content">
+                <h3>Select Items to Clear</h3>
+                <div class="clear-group">
+                    <h4>Book Progress</h4>
+                    <label><input type="checkbox" id="clear-current-book"> Current Book</label><br>
+                    <label><input type="checkbox" id="clear-all-books"> All Books</label><br>
+                </div>
+                <div class="clear-group">
+                    <h4>Notes</h4>
+                    <label><input type="checkbox" id="clear-current-notes"> Current Book Only</label><br>
+                    <label><input type="checkbox" id="clear-all-notes"> All Notes</label><br>
+                </div>
+                <div class="modal-buttons">
+                    <button id="confirm-clear">Clear Selected</button>
+                    <button id="cancel-clear">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Markdown display area -->
+    <div id="markdown-display" class="hidden">
+        <button id="close-markdown">✕ Close</button>
+        <div id="markdown-content"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
