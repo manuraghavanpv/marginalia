@@ -1,6 +1,6 @@
-# Marginalia 📖✍️
+# 🧙 Marginalia 
  
-Track reads, jot thoughts, and conquer chapters on each of your literary quests.
+Track reads, jot thoughts, and conquer chapters on each of your literary quests!
 
 ## Features
 - 📝 **Margin notes** (Markdown supported)  
